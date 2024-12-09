@@ -25,7 +25,7 @@ const ProcessStep = ({ isActive, isComplete, title, description, templates, onCl
         <p className="text-gray-600 mt-2">{description}</p>
         {templates && isActive && (
           <div className="mt-4 bg-gray-100 p-3 rounded-md">
-            <p className="font-medium mb-2">Message Template:</p>
+            <p className="font-semibold mb-2 text-sm">Message Template:</p>
             <pre className="whitespace-pre-wrap text-sm">{templates}</pre>
           </div>
         )}
@@ -47,38 +47,49 @@ const ReleaseProcess = () => {
       {
         title: "2. QA Testing and Pre-Release Validation",
         description: "QA team collaborates with developers to test changes in TEST and PREPROD environments.",
-        templates: `Subject: PREPROD VALIDATION PASSED: [description]
+        templates: `  Subject: PREPROD VALIDATION PASSED: [description]
         
   Hi Tech - PocketWatch,
+
   The following UNSCHEDULED enhancements have passed PreProd Testing:
-  1. [User Story ID and Title]
+        1. [User Story ID and Title]
+        2. [User Story ID and Title]
+
   @[Developer] - you may now release to production.
+
   If anyone has any concerns, please let us know.
+
   Thanks!`
       },
       {
         title: "3. Developer Release Notification",
         description: "Developer notifies the Technical - Release Teams channel about the planned unscheduled release.",
-        templates: `Subject: UNSCHEDULED RELEASE: [description]
+        templates: `  Subject: UNSCHEDULED RELEASE: [description]
         
   Hi @Release,
+
   We are releasing the following items to production:
-  1. [User Story ID and Title]
-  It will only impact the PW app and should not affect other areas of the system. 🙂
+        1. [User Story ID and Title]
+        2. [User Story ID and Title]
+
+  It will only impact the PW app and should not affect other areas of the system.
+  
   If anyone has any concerns, please let us know.
+  
   Thanks!`
       },
       {
         title: "4. Production Deployment",
-        description: "Developer deploys to production and confirms success with a follow-up message.",
-        templates: `Subject: UNSCHEDULED RELEASE SUCCESSFUL: [description]
+        description: "Developer deploys to production and (optionally) confirms success with a follow-up message.",
+        templates: `  Subject: UNSCHEDULED RELEASE SUCCESSFUL: [description]
         
-  Hi @Release,
+  Hi @Everyone,
+
   The following items have been successfully deployed to production:
-  1. [User Story ID and Title]
-  Thanks for your support!
-  Best regards,
-  [Your Name]`
+        1. [User Story ID and Title]
+        2. [User Story ID and Title]
+
+  Thanks for your support!`
       }
     ];
   
